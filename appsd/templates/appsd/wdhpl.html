@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/                     bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<table>
+    <tableborder = "1">
+<div class="container-fluid">  
+    <div class="row">
+    <div class="col-sm-3 col-md-6 col-lg-4" >
+    <p><h2>{{pren.imgname}}</h2></p>
+    {% load static %}
+        <img src = "{%  static  "appsd/wd.jpeg"  %}"/>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-8" > 
+             <tr>
+                  <td><h4>Quantity:</h4></td>
+                  <td><h4>{{pren.qty}}</h4></td>
+             </tr>
+             <tr>
+                  <td><h4>Color:</h4></td>
+                  <td><h4>{{pren.color}}</h4></td>
+             </tr>
+             <tr>
+                  <td><h4>Reviews:</h4></td>     
+                  <td><h4>{{pren.reviews}}</h4></td>
+             <tr>
+                  <td><h4>Cost:</td></h4></td>
+                  <td><h4>{{pren.cost}}</h4></td>
+            </tr>
+       <table>
+        <h4>Size: </h4>
+    <select>
+    <option value="xs">xs</option>
+    <option value="s">s</option>
+    <option value="l">l</option>
+    <option value="xl">xl</option>
+    </select> <br/> <br/>
+    <strike><h4>Original cost : 1000</strike></h4>
+    <strong><h4>Discount 60%  cost : 400 </h4></strong><br/>
+    <h4></h4><br/>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+

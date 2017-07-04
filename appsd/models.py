@@ -19,32 +19,30 @@ def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()     
 class Gifts(models.Model):
    #gid = models.CharField(max_length = 50)
-    qty = models.CharField(max_length = 100)
+    catsid = models.CharField(max_length = 30,null = True, blank = True, default = None)
+    occid = models.CharField(max_length = 30,null = True, blank = True, default = None)
+    qty = models.CharField(max_length = 30)
     color = models.CharField(max_length = 20)
-    reviews = models.CharField(max_length = 100)
+    reviews = models.CharField(max_length = 20)
     imgname = models.CharField(max_length = 100)
     imgpath = models.CharField(max_length = 100)
     cost = models.CharField(max_length = 10)
-    def __str__(self):
-        return self.imgpath
 class Gender(models.Model):
     #gender_id = models.CharField(max_length = 100)
     gender_type = models.CharField(max_length = 6)
-    def __str__(self):
-        return self.gender_type
+
 class Occasion(models.Model):
    # occasion_id = models.CharField(max_length = 50)
     occasion_type = models.CharField(max_length = 40)
-    def __str__(self):
-        return self.occasion_type
+
 class Category(models.Model):
     # category_id = models.CharField(max_length = 50)
      category_type = models.CharField(max_length = 40)
-     def __str__(self):
-         return self.category_type
+
 class Relationship(models.Model):
     # relation_id = models.CharField(max_length = 50)
      relation_type = models.CharField(max_length = 40)
-     def __str__(self):
-         return self.relation_type
- 
+
+class Giftmapping(models.Model):
+        giftid = models.ForeignKey(Gifts)
+        catid = models.ForeignKey(Category) 
